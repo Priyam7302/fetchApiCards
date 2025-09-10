@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.container div {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.container div:hover {
+  transform: translateY(-5px);
+}
+
+.container img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.container p {
+  margin: 5px 0;
+}
+
+.container p:first-of-type {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.container p:last-of-type {
+  font-size: 14px;
+  color: #007bff;
+  font-weight: 600;
+}
