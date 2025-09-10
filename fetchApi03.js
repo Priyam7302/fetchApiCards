@@ -20,14 +20,14 @@ async function fetchProducts() {
       loading.classList.add("show");
     }
     console.log(result);
-    showProducts(result,usdToInr);
+    showProducts(result, usdToInr);
   } catch {
     console.log("error");
   }
 }
 fetchProducts();
 
-function showProducts(r,usdToInr) {
+function showProducts(r, usdToInr) {
   let n = r.length;
   console.log(n);
   for (let i = 1; i <= n; i++) {
@@ -37,8 +37,7 @@ function showProducts(r,usdToInr) {
     let price = document.createElement("p");
     img.src = r[i].url;
     title.innerText = r[i].name;
-
-    price.innerText = (r[i].price * usdToInr).toFixed(2) + "₹";
+    price.innerText = "₹" + (r[i].price * usdToInr).toFixed(2);
     card.append(img, title, price);
     cardMain.append(card);
   }
