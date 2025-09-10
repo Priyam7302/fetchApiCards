@@ -1,9 +1,15 @@
-let container = document.querySelector(".container");
+let cardMain = document.querySelector(".card-main");
+let loading = document.querySelector(".loadingPara");
+console.log(loading);
 let url = "https://ecommerce-api-8ga2.onrender.com/api/product";
 
 async function fetchProducts() {
   let response = await fetch(url);
   let result = await response.json();
+  if (result.length > 0) {
+    loading.classList.remove("loadingPara");
+    loading.classList.add("show");
+  }
   console.log(result);
   showProducts(result);
 }
@@ -21,6 +27,6 @@ function showProducts(r) {
     title.innerText = r[i].name;
     price.innerText = r[i].price;
     card.append(img, title, price);
-    container.append(card);
+    cardMain.append(card);
   }
 }

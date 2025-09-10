@@ -1,49 +1,115 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+/* Reset some defaults */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: rgb(235, 76, 235);
+  padding: 15px 30px;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+/* First li (Ecommerce) on left */
+header ul li:first-child {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  margin-right: auto; /* pushes others to right */
+}
+
+/* All other li */
+header ul li {
+  margin-left: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+header ul li:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
   padding: 20px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+
+/* Loading text */
+.loadingPara {
+  position: fixed;           /* sits on top of everything */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;             /* flexbox for centering */
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8); /* faint overlay */
+  color: black;
+  z-index: 1000;
 }
 
-.container div {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.show {
+  display: none;
+}
+
+
+.show {
+  display: none;
+}
+
+/* Card grid */
+.card-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual card */
+.card-main div {
+  background: #f9f9f9;
   padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
   transition: transform 0.2s ease-in-out;
 }
 
-.container div:hover {
+.card-main div:hover {
   transform: translateY(-5px);
 }
 
-.container img {
+/* Product image */
+.card-main div img {
   width: 100%;
-  height: 200px;
-  object-fit: contain;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
 }
 
-.container p {
-  margin: 5px 0;
-}
-
-.container p:first-of-type {
+/* Product title */
+.card-main div p:first-of-type {
+  font-size: 18px;
   font-weight: bold;
-  font-size: 16px;
-  color: #333;
+  margin: 10px 0 5px;
 }
 
-.container p:last-of-type {
-  font-size: 14px;
-  color: #007bff;
-  font-weight: 600;
+/* Product price */
+.card-main div p:last-of-type {
+  color: #444;
+  font-size: 16px;
 }
+
+
