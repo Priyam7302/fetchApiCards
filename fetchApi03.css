@@ -64,11 +64,6 @@ header ul li:hover {
   display: none;
 }
 
-
-.show {
-  display: none;
-}
-
 /* Card grid */
 .card-main {
   display: grid;
