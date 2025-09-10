@@ -10,9 +10,7 @@
 header {
   background-color: violet;
   padding: 15px 30px;
-  position: sticky;     /* keeps header fixed at top while scrolling */
-  top: 0;
-  z-index: 1000;
+  position: sticky; /* keeps header fixed at top while scrolling */
 }
 
 header ul {
@@ -26,7 +24,7 @@ header ul li:first-child {
   font-weight: bold;
   font-size: 22px;
   color: white;
-  margin-right: auto;   /* pushes other items to the right */
+  margin-right: auto; /* pushes other items to the right */
 }
 
 /* Other nav items */
